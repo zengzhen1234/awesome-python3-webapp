@@ -4,3 +4,11 @@
 所以想把自己学习的一些点滴、问题、趣事记录一下
 就当是一个笔记整理，帮助自己更好的理解
 正好也练习一下代码托管
+backup<-备份目录
+conf<-配置文件
+dist<-打包目录
+www<-web目录，存放.py文件
+  static<-存放静态文件
+  templates<-存放模板文件
+ios<-存放 iosAPP工程
+LICENSE<-代码LISENSE
