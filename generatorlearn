@@ -1,0 +1,48 @@
+'''
+# 使用map和reduce函数：map(funcname,iterator),reduce(funcname,iterator)其中reduce中的funcname是双参数函数。
+from functools import reduce
+DIGITS={'0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}
+
+def str2int(s):
+    def char2num(s):
+        return DIGITS[s]
+    def f(x,y):
+        return x*10+y
+    return reduce(f,map(char2num,s))
+
+s='12345'
+print(str2int(s))
+'''
+'''
+#生成器generator
+def fib(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        yield(b)
+        
+        a, b = b, a + b
+        n = n + 1
+    return 'done'
+#得到结果需要借助循环才能打印
+
+f=fib(6)
+
+for n in f:
+    print(n)
+'''
+# 利用生成器打印杨辉三角
+
+def yanghuiTri(line):
+    b=[1]
+    n=0
+    while n<line:
+        yield b
+        b=[sum(i) for i in zip([0]+b,b+[0])]
+        n=n+1
+
+y=yanghuiTri(5)
+for i in y:
+    print(i)
+    
+                        
+        
