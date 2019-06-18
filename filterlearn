@@ -21,3 +21,41 @@ for n in primes():
         print(n,end=' ')
     else:
             break
+
+#构造一个自然数生成器
+
+def _nature_iter():
+    n=0
+    while True:
+        n=n+1
+        yield n
+    
+def is_palindrome(n):
+    I=n
+    m=0
+    while I:
+        m=m*10+I%10
+        I=I//10
+    if(n==m):
+        return True
+    else:
+        return False
+
+
+def _shaixuan(n):
+    if(is_palindrome(n)):
+        return n
+           
+
+def primess():
+    it =_nature_iter()
+    while True:
+        n=next(it)
+        yield n
+        it=filter(_shaixuan,it)
+
+for n in primess():
+    if(n<50):    
+        print(n,end=' ')
+    else:
+        break
